@@ -19,7 +19,13 @@ public class SortOfSort {
 
             arr[tempLeft] = findMax(arr,tempLeft,tempRight);
             tempLeft++;
+            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldL;
+            tempHoldL = arr[tempLeft];
+
             arr[tempLeft] = findMax(arr,tempLeft,tempRight);
+            tempLeft++;
+            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldL;
+            tempHoldL = arr[tempLeft];
         }
 
     }//end sortOfSort
