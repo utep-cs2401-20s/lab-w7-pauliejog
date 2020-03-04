@@ -1,3 +1,9 @@
+/*
+ * Paulie Jo Gonzalez
+ * lab-w7
+ * MW 1:30 pm
+ */
+
 public class SortOfSort {
     public void sortOfSort(int[] arr) {
         int tempRight = arr.length - 1;
@@ -57,8 +63,8 @@ public class SortOfSort {
         }
     }//end sortOfSort
 
-    public int findMax(int[] arr, int left, int right) {
-        int max = 0;
+    public int findMax(int[] arr, int left, int right) {//helper method
+        int max = -1000;//assuming that there will be no elements smaller than this value
         int i;
         for(i = left; i <= right; i++) {
             if(arr[i] > max)
@@ -67,8 +73,8 @@ public class SortOfSort {
         return max;
     }//end findMax
 
-    public int findIndexOfMax(int[] arr, int left, int right) {
-        int max = 0;
+    public int findIndexOfMax(int[] arr, int left, int right) {//helper method
+        int max = -1000;
         int index = 0;
         for(int i = left; i <= right; i++) {
             if(arr[i] > max) {
@@ -86,18 +92,8 @@ public class SortOfSort {
         for(int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-    }
-    /*some code that might work
-      public static int findMax(int[] arr, int left, int right) {
-    int max = 0;
-    //int mid = arr.length/2;
-    for(int i = left; i <= right; i++) {
-        if(arr[i] > max)
-            max = arr[i];
-    }//end for
-    return max;
-  }//end findMax
-     */
+        System.out.println("\n");
+    }//end printArray
 }//end class
 
 
