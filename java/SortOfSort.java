@@ -3,31 +3,47 @@ public class SortOfSort {
         int tempRight = arr.length - 1;
         int tempLeft = 0;
 
-        while(tempLeft < tempRight) {
+        //int track = arr.length;
+        int n = arr.length/4;
+        int max, maxInd;
+        while(n != 0) {
             int tempHoldR = arr[tempRight];
             int tempHoldL = arr[tempLeft];
 
-            arr[tempRight] = findMax(arr,tempLeft,tempRight);
-            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldR;
+            max = findMax(arr, tempLeft, tempRight);
+            maxInd = findIndexOfMax(arr, tempLeft, tempRight);
+            arr[tempRight] = max;
+            if(maxInd != tempRight)
+                arr[maxInd] = tempHoldR;
             tempRight--;
             tempHoldR = arr[tempRight];
 
-            arr[tempRight] = findMax(arr,tempLeft,tempRight);
-            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldR;
+            max = findMax(arr, tempLeft, tempRight);
+            maxInd = findIndexOfMax(arr, tempLeft, tempRight);
+            arr[tempRight] = max;
+            if(maxInd != tempRight)
+                arr[maxInd] = tempHoldR;
             tempRight--;
-            tempHoldR = arr[tempRight];
+            //tempHoldR = arr[tempRight];
 
-            arr[tempLeft] = findMax(arr,tempLeft,tempRight);
+            max = findMax(arr, tempLeft, tempRight);
+            maxInd = findIndexOfMax(arr, tempLeft, tempRight);
+            arr[tempLeft] = max;
+            if(maxInd != tempLeft)
+                arr[maxInd] = tempHoldL;
             tempLeft++;
-            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldL;
             tempHoldL = arr[tempLeft];
 
-            arr[tempLeft] = findMax(arr,tempLeft,tempRight);
+            max = findMax(arr, tempLeft, tempRight);
+            maxInd = findIndexOfMax(arr, tempLeft, tempRight);
+            arr[tempLeft] = max;
+            if(maxInd != tempLeft)
+                arr[maxInd] = tempHoldL;
             tempLeft++;
-            arr[findIndexOfMax(arr,tempLeft,tempRight)] = tempHoldL;
-            tempHoldL = arr[tempLeft];
+            //tempHoldL = arr[tempLeft];
+
+            n--;
         }
-
     }//end sortOfSort
 
     public int findMax(int[] arr, int left, int right) {
@@ -49,9 +65,17 @@ public class SortOfSort {
                 index = i;
             }
         }//end for
+        if(left == right)
+            index = left;
+
         return index;
     }//end findIndexOfMax
 
+    public void printArray(int[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
     /*some code that might work
       public static int findMax(int[] arr, int left, int right) {
     int max = 0;
