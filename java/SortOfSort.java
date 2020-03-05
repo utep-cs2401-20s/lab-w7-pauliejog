@@ -8,18 +8,21 @@ public class SortOfSort {
     public void sortOfSort(int[] arr) {
         int tempRight = arr.length - 1;
         int tempLeft = 0;
-        int n, max, maxInd;
+        int n = arr.length;
+        int max;
+        int maxInd;
+        int loop;//condition for the while loop
 
-        if(arr.length%4 == 0)
-            n = arr.length/4;
+        if(n%4 == 0)
+            loop = n/4;
         else
-            n = arr.length/4 + 1;
+            loop = n/4 + 1;
 
-        while(n != 0) {
+        for(int i = 0; i < loop; i--) {
             int tempHoldR = arr[tempRight];
             int tempHoldL = arr[tempLeft];
 
-            for(int r = 0; r < 2; r++) {
+            for(int r = 0; r < 2; r++) {//right side
                 if(tempLeft > tempRight)
                     break;
                 max = findMax(arr, tempLeft, tempRight);
@@ -36,7 +39,7 @@ public class SortOfSort {
             if(tempLeft > tempRight)
                 break;
             ///////////////
-            for(int l = 0; l < 2; l++) {
+            for(int l = 0; l < 2; l++) {//left side
                 if(tempLeft > tempRight)
                     break;
                 max = findMax(arr, tempLeft, tempRight);
@@ -52,9 +55,7 @@ public class SortOfSort {
             }//end for
             if(tempLeft > tempRight)
                 break;
-
-            n--;
-        }
+        }//end for
     }//end sortOfSort
 
     public int findMax(int[] arr, int left, int right) {//helper method
@@ -82,7 +83,7 @@ public class SortOfSort {
         return index;
     }//end findIndexOfMax
 
-    public void printArray(int[] arr) {
+    public void printArray(int[] arr) {//method to print the array
         for(int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
