@@ -100,4 +100,19 @@ public class SortOfSortTester {
         arr.sortOfSort(f);
         assertArrayEquals(exp,f);
     }
+
+    /*
+     * sortOfSort:
+     * Test case 7: This test case checks that the method works when given an array with negative numbers and duplicates.
+     * sortOfSort() → exp
+     * PASSED
+     */
+    @Test
+    public void testSortOfSort7() {
+        int[] g = {1,-5,6,88,-100,400,2,0,9,9,9,15};
+        int[] exp = {15,9,6,2,-5,-100,0,1,9,9,88,400};
+        SortOfSort arr = new SortOfSort();
+        arr.sortOfSort(g);
+        assertArrayEquals(exp,g);
+    }
 }//end SortOfSortTester
