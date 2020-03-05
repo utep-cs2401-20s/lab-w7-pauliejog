@@ -20,7 +20,6 @@ public class SortOfSort {
 
         for(int i = 0; i < repeat; i--) {
             int tempHoldR = arr[tempRight];
-            //int tempHoldL = arr[tempLeft];
 
             for(int r = 0; r < 2; r++) {//right side
                 if(tempLeft > tempRight)
