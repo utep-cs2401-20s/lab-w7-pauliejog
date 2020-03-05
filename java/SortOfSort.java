@@ -11,14 +11,14 @@ public class SortOfSort {
         int n = arr.length;
         int max;
         int maxInd;
-        int loop;//condition for the while loop
+        int repeat;//condition for the while loop
 
         if(n%4 == 0)
-            loop = n/4;
+            repeat = n/4;
         else
-            loop = n/4 + 1;
+            repeat = n/4 + 1;
 
-        for(int i = 0; i < loop; i--) {
+        for(int i = 0; i < repeat; i--) {
             int tempHoldR = arr[tempRight];
             int tempHoldL = arr[tempLeft];
 
