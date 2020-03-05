@@ -115,4 +115,23 @@ public class SortOfSortTester {
         arr.sortOfSort(g);
         assertArrayEquals(exp,g);
     }
+
+    @Test
+    public void testSortOfSort8() {//BROKE IT
+        int[] g = {3,3,3,4,4,4,9,9,9,9,7,7,7,1,1,1,1,1,1,1,1,1,1};
+        int[] exp = {9,9,7,4,3,3,1,1,1,1,1,1,1,1,1,1,3,4,4,7,7,9,9};
+        SortOfSort arr = new SortOfSort();
+        arr.sortOfSort(g);
+        assertArrayEquals(exp,g);
+        arr.printArray(g);
+    }
+    @Test
+    public void testSortOfSort9() {//BROKE IT
+        int[] g = {9,8,7,6,5,3,7};
+        //int[] exp = {};
+        SortOfSort arr = new SortOfSort();
+        arr.sortOfSort(g);
+        //assertArrayEquals(exp,g);
+        arr.printArray(g);
+    }
 }//end SortOfSortTester

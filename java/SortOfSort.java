@@ -20,7 +20,7 @@ public class SortOfSort {
 
         for(int i = 0; i < repeat; i--) {
             int tempHoldR = arr[tempRight];
-            int tempHoldL = arr[tempLeft];
+            //int tempHoldL = arr[tempLeft];
 
             for(int r = 0; r < 2; r++) {//right side
                 if(tempLeft > tempRight)
@@ -35,10 +35,13 @@ public class SortOfSort {
                     if(tempRight > -1)
                         tempHoldR = arr[tempRight];
                 }
+
             }//end for
             if(tempLeft > tempRight)
                 break;
             ///////////////
+
+            int tempHoldL = arr[tempLeft];
             for(int l = 0; l < 2; l++) {//left side
                 if(tempLeft > tempRight)
                     break;
