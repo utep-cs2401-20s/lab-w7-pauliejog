@@ -116,22 +116,28 @@ public class SortOfSortTester {
         assertArrayEquals(exp,g);
     }
 
+    /*
+     * sortOfSort:
+     * 2 extra test cases: These next two test cases originally failed and broke my code, so i fixed it
+     * sortOfSort() → exp
+     * PASSED
+     */
     @Test
-    public void testSortOfSort8() {//BROKE IT
-        int[] g = {3,3,3,4,4,4,9,9,9,9,7,7,7,1,1,1,1,1,1,1,1,1,1};
+    public void testSortOfSort8() {
+        int[] h = {3,3,3,4,4,4,9,9,9,9,7,7,7,1,1,1,1,1,1,1,1,1,1};
         int[] exp = {9,9,7,4,3,3,1,1,1,1,1,1,1,1,1,1,3,4,4,7,7,9,9};
         SortOfSort arr = new SortOfSort();
-        arr.sortOfSort(g);
-        assertArrayEquals(exp,g);
-        arr.printArray(g);
+        arr.sortOfSort(h);
+        assertArrayEquals(exp,h);
+        arr.printArray(h);
     }
     @Test
-    public void testSortOfSort9() {//BROKE IT
-        int[] g = {9,8,7,6,5,3,7};
+    public void testSortOfSort9() {
+        int[] i = {9,8,7,6,5,3,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         //int[] exp = {};
         SortOfSort arr = new SortOfSort();
-        arr.sortOfSort(g);
+        arr.sortOfSort(i);
         //assertArrayEquals(exp,g);
-        arr.printArray(g);
+        arr.printArray(i);
     }
 }//end SortOfSortTester
