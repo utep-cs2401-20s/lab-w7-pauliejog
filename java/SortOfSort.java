@@ -62,8 +62,7 @@ public class SortOfSort {
 
     public int findMax(int[] arr, int left, int right) {//helper method
         int max = -1000;//assuming that there will be no elements smaller than this value
-        int i;
-        for(i = left; i <= right; i++) {
+        for(int i = left; i <= right; i++) {
             if(arr[i] > max)
                 max = arr[i];
         }//end for
